@@ -10,4 +10,12 @@ node{
    stage('email-notification'){
     mail bcc: '', body: 'Welcome to Jenkins e-mail notification', cc: '', from: '', replyTo: '', subject: 'Jenkins-job', to: 'karthikeyan4595@gmail.com'   
 }
+   stage('slack notification'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/',
+    channel: '#jenkins-pipeline-demo',
+    color: 'good', 
+    message: 'welcome to Jenkins,Slack', 
+    teamDomain: 'karthikeyan4595', 
+    tokenCredentialId: 'slack-demo'
+    }
 }
