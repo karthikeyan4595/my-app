@@ -11,8 +11,7 @@ node{
       
       sshagent(['slave-one']) {
     sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.16.165:/opt/tomcat8/webapps'
-}
-      }
+     }
    }
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
@@ -27,5 +26,5 @@ node{
        teamDomain: 'karthikeyan4595',
        tokenCredentialId: 'slack-demo'
    }
+  }
 
-}
