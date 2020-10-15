@@ -28,6 +28,7 @@ node{
                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
               }
           }
+       }
    
    stage('Slack Notification'){
        slackSend baseUrl: 'https://hooks.slack.com/services/',
